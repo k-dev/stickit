@@ -1,35 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Contact us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% extends "stickit/base.html" %}
 
-    <script src="js/mp-header.js"></script>
+{% block content %}
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-
-  </head>
-
-  <body onload="add_header('order_custom');">
-
-	<div id="header"></div>
-
-    <div class="container">
-
-      <h2>There will be Store</h2>
-      <p>Opening soon!</p>
-
+<div class="row">
+  <div class="span6">
+    <h3>Subject tags:
+    {% if subjects_list %} 
+    <div class="btn-group btn-small">
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+      {{selected_subject}}
+      <span class="caret"></span>
+    </button>
+      <ul class="dropdown-menu">
+        <li><a style="margin-right: 00px" href={% url 'stickit.views.store' %}>All</a></li>
+        {% for subject in subjects_list %}
+          <li><a style="margin-right: 00px" href={% url 'stickit.views.store' subject_id=subject.id %}>{{ subject.name }}</a></li>
+        {% endfor %}
+      </ul>
     </div>
+    </h3>
+    {% else %}
+      </h3>
+      <p>No subject selected</p>
+    {% endif %}
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="span3">
+    <ul class="thumbnails">
+      {% load staticfiles %}
+      {% if stickers_list %}
+        {% for sticker in stickers_list %}
+          <div class="simpleCart_shelfItem span4">
+            {% load l10n %}
+            <a href=''><img class="item_thumb" src="{% static 'stickers/' %}{{ sticker.image_path }}" alt="Add to Cart" width=400></a>
+            <h4><span class="item_name">{{ sticker.name }}</span><span style="margin-left:20px;color: rgb(120,200,120)" class="item_price">$ {{ sticker.price|unlocalize }}</span></h4>
+            <p>{{ sticker.description }} (Item ID: <span class="item_code">{{ sticker.id }}</span>)</p>
+            <p><a class='item_add btn' href="javascript:;">Order</a></p>
+            <!-- <p><a class='btn' style="margin-left:0px" href={% url 'stickit.views.buy' item_id=sticker.id %}>Order</a></p> -->
+          </div>
+        {% endfor %}
+      {% else %}
+        <li class="span4"><p>No stickers</p></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
 
-  </body>
-</html>
+{% endblock %}

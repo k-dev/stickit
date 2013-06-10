@@ -50,16 +50,17 @@
     <div class="container">
 
       <div style="height: 60px;">
-        <h4 align=center style="padding-top: 15px; color: {{ statecolor }}">{{ state }}</h4>
+        <h4 align=center style="padding-top: 15px; color: rgb(200, 100, 100)">{{ state }}</h4>
       </div>
 
-      <form class="form-signin" action={% url 'stickit.views.sign_up' %} method="post">
-        <h3 class="form-signin-heading">Enter valid information to sign up</h2>
+      <form class="form-signin" action="{% url 'stickit.views.login_user' %}" method="post">
+        <h3 class="form-signin-heading">Log In</h2>
         <input type="text" class="input-block-level" placeholder="Name" name="username" value="{{ username }}">
-        <input type="text" class="input-block-level" placeholder="Email address" name="email" value="{{ email }}">
         <input type="password" class="input-block-level" placeholder="Password" name="password">
-        <input type="password" class="input-block-level" placeholder="Re-enter Password" name="password2">
-        <button class="btn" type="submit">Sign Up</button>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me" name="remember-me"> Remember me
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Continue</button>
       </form>
 
     </div>

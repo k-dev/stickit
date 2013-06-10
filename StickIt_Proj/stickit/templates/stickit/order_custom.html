@@ -1,37 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Contact us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% extends "stickit/base.html" %}
 
-    <script src="js/mp-header.js"></script>
+{% block content %}
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <h2>Upload custom sticker design</h2>
+  <br>
+  <p>Upload your own design for sticker:</p>
 
-  </head>
+  {% if form.errors %}
+      <p style="color: red;">
+          Please correct the error{{ form.errors|pluralize }} below.
+      </p>
+  {% endif %}
 
-  <body onload="add_header('order_custom');">
+  <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+    <table>
+      {{ form.image }}
+    </table>
+    <input class="btn" type="submit" value="Upload image"></input>
+  </form>
 
-	<div id="header"></div>
-
-    <div class="container">
-
-      <h2>Upload custom sticker design</h2>
-      <br>
-      <p>Upload your own design for sticker:</p>
-      <button type=button>Upload file</button>
-
-    </div>
-
-  </body>
-</html>
+{% endblock %}

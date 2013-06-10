@@ -1,0 +1,24 @@
+{% extends "stickit/base.html" %}
+
+{% block content %}
+
+<h2>Your Orders</h2>
+<br>
+	{% if orders_list %}
+		<table class="table table-hover">
+			<tr>
+				<td><strong>Order ID</strong></td>
+				<td><strong>Order Date</strong></td>
+			</tr>
+			{% for order in orders_list %}
+			<tr>
+				<td><a href={% url 'stickit.views.order' order.id %}>{{ order.id  }}</a></td>
+				<td>{{ order.date_time }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+		<p>No Orders</p>
+	{% endif %}
+
+{% endblock %}

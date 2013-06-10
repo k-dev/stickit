@@ -1,0 +1,15 @@
+{% extends "stickit/base.html" %}
+
+{% block extrahead %}
+{% endblock %}
+
+{% block content %}
+
+<h2>Cart</h2>
+<div class="simpleCart_items table table-hover"></div>
+<h5> Total: <span class="simpleCart_total"></span></h5>
+
+<a href="javascript:;simpleCart.empty();" class="simpleCart_checkout btn btn-primary" >Proceed Order</a>
+<a href="javascript:;" class="simpleCart_empty btn" style="margin-left: 8px">Clear</a>
+
+{% endblock %}

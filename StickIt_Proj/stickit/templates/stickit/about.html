@@ -1,47 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>About Stick It</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% extends "stickit/base.html" %}
 
-    <script src="js/mp-header.js"></script>
+{% block content %}
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+  	<div class="span8">
+    <h2>StickIt</h2>
+    <br>
+    <p>Stick It is a simple service that provides easy workflow to users. It allows them to buy popular stickers with different sizes, ordered by useful groups and represented in a simple list form.</p>
+	</div>
+  </div>
+</div>
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="/wp-content/themes/clear-theme/js/html5shiv.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="img/favicon.png">
-  </head>
-
-  <body onload="add_header('about');">
-
-	<div id="header"></div>
-
-    <div class="container">
-
-      <h2>StickIt</h2>
-      <br>
-      <p>Some text about history of StickIt.</p>
-
-    </div>
-
-  </body>
-</html>
+{% endblock %}

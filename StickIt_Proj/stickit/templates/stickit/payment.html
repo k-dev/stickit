@@ -1,0 +1,10 @@
+{% extends "stickit/base.html" %}
+
+{% block content %}
+
+<h3>Order ID: {{ order.id }}</h3>
+<!-- <p> Выбор платежной системы: Вы можете выбрать LiqPay или LiqPay</p>
+<p> После оплаты мы проверим Ваш платеж и внесем информацию в систему</p> -->
+<iframe width="800px" height="600px" src="https://liqpay.com/?do=pages&p=pretransfercard"></iframe>
+
+{% endblock %}

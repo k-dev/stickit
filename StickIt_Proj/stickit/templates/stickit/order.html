@@ -1,0 +1,49 @@
+{% extends "stickit/base.html" %}
+
+{% block content %}
+
+{% load l10n %}
+
+<h3>Order ID: {{ order.id }}</h3>
+<p>Your Order ({{ order.date_time }}) <a href="javascript:window.print()" style="float: right">Print</a></p>
+<table class="table table-hover">
+	<tr> 
+		<td><strong>Sticker Name</strong></td>
+		<td><strong>Quantity</strong></td>
+		<td><strong>Price</strong></td>
+	</tr>
+	{% for item in order_items %}
+	<tr>
+		<td>{{ item.sticker.name }} </a></td>
+		<td>{{ item.quantity }}</td>
+		<td id='price{{ item.id }}'>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<h5 id="TotalPrice"></h5>
+
+{% if checkout %}
+<!-- <a href="{% url 'stickit.views.payment' order.id %}" class="btn btn-primary">Buy</a> -->
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="VSSNAVQV9YMQE">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+{% endif %}
+
+<script language="javascript" type="text/javascript">
+	var totalPrice = 0;
+	{% for item in order_items %}
+    var price = {{item.quantity}} * {{item.sticker.price|unlocalize }};
+    totalPrice += price;
+    document.getElementById('price{{ item.id }}').innerHTML = '$'+price.toFixed(2);
+  {% endfor %}
+  document.getElementById('TotalPrice').innerHTML = 'Total price: $' + totalPrice.toFixed(2);
+ </script>
+
+{% endblock %}

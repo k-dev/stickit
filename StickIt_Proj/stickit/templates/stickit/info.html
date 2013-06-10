@@ -1,0 +1,40 @@
+{% extends "stickit/base.html" %}
+
+{% block content %}
+
+  <!-- Main hero unit for a primary marketing message or call to action -->
+  <div class="row">
+    <div class="span8">
+      <h2>What is Stick It?</h2>
+      <p>Stick It is a simple service that provides easy workflow to users. It allows them to buy popular stickers with different sizes, ordered by useful groups and represented in a simple list form.</p>
+    </div>
+  </div>
+  <br>
+  <div class="row" style="background-color:#eeeded; padding: 15px 0px; border-radius: 15px;">
+      <div class="span4">
+        <h4>We provide simple product filtering</h4>
+        Filtering by the most popular subjects.
+      </div>
+      <div class="span4">
+        <h4>You can upload custom design for sticker</h4>
+        <a href="/order_custom">Upload image file</a> representing custom sticker design, you would like to buy.
+      </div>
+      <div class="span4">
+        <h4>Payment through popular service PayPal</h4>
+        Details at <a href="http://paypal.com">paypal.com</a>
+      </div>
+    </div>
+
+  <!-- Example row of columns -->
+
+  <br>
+<div class="row">
+  <div class="span7">
+    <h4>Contacts</h4>
+    <p>Our office is placed in Kyiv, Ukraine.</p>
+    <p>Tel. +380 44 123 45 6</p>
+    <p><a class="btn" href="/contact">View details &raquo;</a></p>
+  </div>
+</div>
+
+{% endblock %}
