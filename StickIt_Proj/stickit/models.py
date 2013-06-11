@@ -33,6 +33,7 @@ class Sticker(models.Model):
 class Order(models.Model):
 	date_time = models.DateTimeField('Order date and time')
 	user = models.ForeignKey(User)
+	processed = models.IntegerField(default=0)
 	def __unicode__(self):
 		return str(self.date_time)
 
@@ -41,7 +42,8 @@ class OrderItem(models.Model):
 	quantity = models.IntegerField(default=0)
 	order = models.ForeignKey(Order)
 	
-	def create_order_item(self,sticker_id,order_id,quantity):
+	def create_order_item(sticker_id,order_id,quantity):
+		self.order = order_id
 		self.sticker = sticker_id
 		self.quantity = quantity
 	def __unicode__(self):

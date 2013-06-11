@@ -1,16 +1,116 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
-
+import datetime
+from django.utils.timezone import utc
 from django.test import TestCase
+from django.test.client import RequestFactory, Client
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoSuchElementException
+import unittest, time, re
+from django.contrib.auth.models import User
+from models import OrderItem, Order, Sticker
 
+class PagesTest(TestCase):
+	def setUp(self):
+		self.client = Client()
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+	def test_sign_up_page(self):
+		response = self.client.get('/sign_up/')
+		# Check that the response is 200 OK.
+		self.assertEqual(response.status_code, 200)
+
+	def test_index_page(self):
+		response = self.client.get('/')
+		# Check that the response is 200 OK.
+		self.assertEqual(response.status_code, 200)
+
+	def test_login_page(self):
+		response = self.client.get('/login/')
+		# Check that the response is 200 OK.
+		self.assertEqual(response.status_code, 200)
+
+	def test_store(self):
+		response = self.client.get('/store/')
+		# Check that the response is 200 OK.
+		self.assertEqual(response.status_code, 200)
+
+class OrderItemTest(TestCase):
+	def setUp(self):
+		self.user = User(username='testuser',email='test@test.com')
+		self.user.set_password('testpass')
+		self.user.save()
+		self.sticker = Sticker(name='t1')
+		self.sticker.save()
+		date_time = datetime.datetime.utcnow().replace(tzinfo=utc)
+		self.order = Order(date_time=date_time, user=self.user)
+		self.order.save()
+
+	def test_order_item(self):
+		orderItem = OrderItem(sticker=self.sticker, order=self.order)
+		orderItem.save()
+
+		self.assertEqual(orderItem, OrderItem.objects.get(order=self.order.id))
+
+	def test_relation(self):
+		uid = self.user.id
+		User.objects.get(pk=self.user.id).delete()
+
+		self.assertEqual(len(Order.objects.filter(user=uid)), 0)
+
+class Pythonwd(unittest.TestCase):
+	def setUp(self):
+		self.driver = webdriver.Firefox()
+		self.driver.implicitly_wait(30)
+		self.base_url = "http://localhost:8000"
+		self.verificationErrors = []
+		self.accept_next_alert = True
+
+	def test_pythonwd(self):
+		driver = self.driver
+		driver.get(self.base_url + "/")
+		driver.find_element_by_xpath("(//button[@type='button'])[2]").click()
+		driver.find_element_by_css_selector("form.form-signin > input[name=\"username\"]").clear()
+		driver.find_element_by_css_selector("form.form-signin > input[name=\"username\"]").send_keys("new")
+		driver.find_element_by_name("email").clear()
+		driver.find_element_by_name("email").send_keys("new@o.oa")
+		driver.find_element_by_css_selector("form.form-signin > input[name=\"password\"]").clear()
+		driver.find_element_by_css_selector("form.form-signin > input[name=\"password\"]").send_keys("111111")
+		driver.find_element_by_name("password2").clear()
+		driver.find_element_by_name("password2").send_keys("111111")
+		driver.find_element_by_css_selector("form.form-signin > button.btn").click()
+		driver.find_element_by_link_text("Store").click()
+		driver.find_element_by_link_text("Order").click()
+		driver.find_element_by_link_text("Order").click()
+		driver.find_element_by_link_text("Order").click()
+		driver.find_element_by_link_text("Order").click()
+		driver.find_element_by_link_text("Order").click()
+		driver.find_element_by_link_text("Order").click()
+		driver.find_element_by_link_text("View Cart (6)").click()
+		driver.find_element_by_link_text("-").click()
+		driver.find_element_by_link_text("Proceed Order").click()
+		driver.find_element_by_link_text("Store").click()
+    
+    def is_element_present(self, how, what):
+        try: self.driver.find_element(by=how, value=what)
+        except NoSuchElementException, e: return False
+        return True
+    
+    def is_alert_present(self):
+        try: self.driver.switch_to_alert()
+        except NoAlertPresentException, e: return False
+        return True
+    
+	def close_alert_and_get_its_text(self):
+		try:
+			alert = self.driver.switch_to_alert()
+			alert_text = alert.text
+			if self.accept_next_alert:
+				alert.accept()
+			else:
+				alert.dismiss()
+			return alert_text
+		finally: self.accept_next_alert = True
+
+	def tearDown(self):
+		self.driver.quit()
+		self.assertEqual([], self.verificationErrors)

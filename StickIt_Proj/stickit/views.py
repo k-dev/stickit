@@ -210,12 +210,23 @@ def logout_user(request):
 def admin_cart(request):
 	lastOrders = []
 	for user in User.objects.all():
-		orders = Order.objects.filter(user=user.id)
+		orders = Order.objects.filter(user=user.id, processed='0')
 		if len(orders) > 0:
-			lastOrder=orders[len(orders)-1]
-			lastOrders.append(lastOrder)
+			# lastOrder=orders[len(orders)-1]
+			lastOrders.extend(orders)
 
 	context = { 'users' : User.objects.all(),
 			'orders' : lastOrders,
 			'order_items' : OrderItem.objects.all(), }
 	return render(request, 'stickit/admin_cart.html', context)
+
+def admin_cart_edit(request, order_id=0, remove=0):
+	if (remove == '1'):
+		# print(OrderItem.objects.filter(order=order_id))
+		# print(Order.objects.get(pk=order_id))
+		OrderItem.objects.filter(order=order_id).delete()
+		Order.objects.get(pk=order_id).delete()
+		print('Removing Order (id ='+str(order_id)+')')
+		order_id=0
+		remove=0
+	return admin_cart(request)

@@ -6,7 +6,8 @@ admin.autodiscover()   #функция автоматического обнар
 
 urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
-	url(r'^admin/cart', 'stickit.views.admin_cart'),
+	url(r'^admin/cart$', 'stickit.views.admin_cart'),
+	url(r'^admin/cart/(?P<order_id>\d+)/(?P<remove>\d+)', 'stickit.views.admin_cart_edit'),
 	url(r'^$', include('stickit.urls')),
 	# url(r'^stickit/', include('stickit.urls')),
 	# url(r'^$', 'stickit.views.index'),

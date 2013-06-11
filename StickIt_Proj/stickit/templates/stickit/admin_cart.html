@@ -6,30 +6,30 @@
 
 <div class="module">
 <table>
-	<caption>
-		User: {{ order.user_id }}, Order ID: {{ order.id }}
-    </caption>
+	<caption>User: {{ order.user_id }}, Order ID: {{ order.id }}</caption>
+    <tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Count</th>
+		<th></th>
+	</tr>
 	{% for order_item in order_items %}
-		{% if order_item.order_id == order.id %}
-		<tr>
-			<th>ID</th>
-			<th>Name</th>
-			<th>Count</th>
-		</tr>
-		<tr>
-			<td>
-				{{ order_item.id }}
-			</td>
-			<td>
-				{{ order_item.sticker.name }}
-			</td>
-			<td>
-				{{ order_item.quantity }}
-			</td>
-		</tr>
-		{% endif %}
+	{% if order_item.order_id == order.id %}
+	<tr>
+		<td>
+			{{ order_item.id }}
+		</td>
+		<td>
+			{{ order_item.sticker.name }}
+		</td>
+		<td>
+			{{ order_item.quantity }}
+		</td>
+	</tr>
+	{% endif %}
 	{% endfor %}
 </table>
+<a href="{% url 'stickit.views.admin_cart_edit' order_id=order.id remove=1 %}">Remove</a>
 </div>
 
 {% endfor %}
