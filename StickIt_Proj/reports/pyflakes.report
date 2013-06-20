@@ -1,0 +1,71 @@
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/hashers.py:34: [E] PYFLAKES:local variable 'hasher' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/middleware.py:61: [E] PYFLAKES:local variable 'e' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/models.py:18: [E] PYFLAKES:'UNUSABLE_PASSWORD' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:1: [E] PYFLAKES:'from django.contrib.auth.tests.custom_user import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:2: [E] PYFLAKES:'from django.contrib.auth.tests.auth_backends import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:3: [E] PYFLAKES:'from django.contrib.auth.tests.basic import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:4: [E] PYFLAKES:'from django.contrib.auth.tests.context_processors import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:5: [E] PYFLAKES:'from django.contrib.auth.tests.decorators import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:6: [E] PYFLAKES:'from django.contrib.auth.tests.forms import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:7: [E] PYFLAKES:'from django.contrib.auth.tests.remote_user import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:8: [E] PYFLAKES:'from django.contrib.auth.tests.management import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:9: [E] PYFLAKES:'from django.contrib.auth.tests.models import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:10: [E] PYFLAKES:'from django.contrib.auth.tests.handlers import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:11: [E] PYFLAKES:'from django.contrib.auth.tests.hashers import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:12: [E] PYFLAKES:'from django.contrib.auth.tests.signals import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:13: [E] PYFLAKES:'from django.contrib.auth.tests.tokens import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/__init__.py:14: [E] PYFLAKES:'from django.contrib.auth.tests.views import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/context_processors.py:163: [E] PYFLAKES:local variable 'query' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/forms.py:254: [E] PYFLAKES:local variable 'form' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/remote_user.py:6: [E] PYFLAKES:'AnonymousUser' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/urls.py:20: [E] PYFLAKES:local variable 'r1' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/urls.py:27: [E] PYFLAKES:local variable 'r1' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/views.py:257: [E] PYFLAKES:local variable 'response' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/auth/tests/views.py:533: [E] PYFLAKES:local variable 'response' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/contenttypes/generic.py:56: [E] PYFLAKES:redefinition of unused 'ContentType' from line 18
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/contenttypes/generic.py:218: [E] PYFLAKES:redefinition of unused 'ContentType' from line 18
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/messages/__init__.py:3: [E] PYFLAKES:'from django.contrib.messages.api import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/messages/__init__.py:4: [E] PYFLAKES:'from django.contrib.messages.constants import *' used; unable to detect undefined names
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/messages/tests/__init__.py:1: [E] PYFLAKES:'CookieTest' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/messages/tests/__init__.py:2: [E] PYFLAKES:'FallbackTest' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/messages/tests/__init__.py:3: [E] PYFLAKES:'MiddlewareTest' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/messages/tests/__init__.py:4: [E] PYFLAKES:'SessionTest' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/messages/tests/base.py:231: [E] PYFLAKES:local variable 'show_url' is assigned to but never used
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:3: [E] PYFLAKES:'ACTION_CHECKBOX_NAME' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:4: [E] PYFLAKES:'VERTICAL' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:4: [E] PYFLAKES:'HORIZONTAL' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:4: [E] PYFLAKES:'ModelAdmin' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:5: [E] PYFLAKES:'TabularInline' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:5: [E] PYFLAKES:'StackedInline' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:6: [E] PYFLAKES:'AdminSite' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:7: [E] PYFLAKES:'RelatedFieldListFilter' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:7: [E] PYFLAKES:'ChoicesFieldListFilter' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:7: [E] PYFLAKES:'DateFieldListFilter' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:7: [E] PYFLAKES:'SimpleListFilter' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:7: [E] PYFLAKES:'ListFilter' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:7: [E] PYFLAKES:'BooleanFieldListFilter' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:7: [E] PYFLAKES:'AllValuesFieldListFilter' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/__init__.py:7: [E] PYFLAKES:'FieldListFilter' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/templatetags/admin_list.py:15: [E] PYFLAKES:'six' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/templatetags/admin_list.py:18: [E] PYFLAKES:'smart_text' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admin/templatetags/admin_urls.py:1: [E] PYFLAKES:'reverse' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admindocs/views.py:20: [E] PYFLAKES:'mark_safe' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django/contrib/admindocs/views.py:322: [E] PYFLAKES:local variable 'lib' is assigned to but never used
+stickit/models.py:46: [E] PYFLAKES:undefined name 'self'
+stickit/models.py:47: [E] PYFLAKES:undefined name 'self'
+stickit/models.py:48: [E] PYFLAKES:undefined name 'self'
+stickit/tests.py:4: [E] PYFLAKES:'RequestFactory' imported but unused
+stickit/tests.py:6: [E] PYFLAKES:'By' imported but unused
+stickit/tests.py:7: [E] PYFLAKES:'Select' imported but unused
+stickit/tests.py:9: [E] PYFLAKES:'re' imported but unused
+stickit/tests.py:9: [E] PYFLAKES:'time' imported but unused
+stickit/tests.py:12: [E] PYFLAKES:'call_command' imported but unused
+stickit/tests.py:177: [E] PYFLAKES:local variable 'e' is assigned to but never used
+stickit/tests.py:182: [E] PYFLAKES:local variable 'e' is assigned to but never used
+stickit/tests.py:187: [E] PYFLAKES:undefined name 'NoAlertPresentException'
+stickit/tests.py:187: [E] PYFLAKES:local variable 'e' is assigned to but never used
+stickit/urls.py:2: [E] PYFLAKES:'TemplateView' imported but unused
+stickit/views.py:4: [E] PYFLAKES:'render_to_response' imported but unused
+stickit/views.py:6: [E] PYFLAKES:'login_required' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django_jenkins/management/commands/lettuce.py:2: [E] PYFLAKES:'make_option' imported but unused
+../../../Virtualenvs/webprojects/lib/python2.7/site-packages/django_jenkins/tasks/run_graphmodels.py:43: [E] PYFLAKES:'pygraphviz' imported but unused
