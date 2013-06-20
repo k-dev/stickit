@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8000/" />
+<title>stickit_signup</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">stickit_signup</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=form.form-signin &gt; input[name=&quot;username&quot;]</td>
+	<td>testUser</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>test@test.ua</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=form.form-signin &gt; input[name=&quot;password&quot;]</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password2</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=form.form-signin &gt; button.btn</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

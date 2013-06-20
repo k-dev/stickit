@@ -2,6 +2,7 @@
 
 # coding: utf-8
 import os
+import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -14,10 +15,15 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+DATABASE_NAME = os.path.join(BASE_DIR, 'db.sqlite')
+
+# if 'test' in sys.argv:
+#     DATABASE_NAME = os.path.join(BASE_DIR, 'db-test.sqlite')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite'), # Or path to database file if using sqlite3.
+        'NAME': DATABASE_NAME, # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
 #         'USER': '',
 #         'PASSWORD': '',

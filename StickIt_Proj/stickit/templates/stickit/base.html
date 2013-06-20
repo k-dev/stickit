@@ -144,7 +144,7 @@
               <form class="navbar-form pull-right" action={% url 'stickit.views.login_user' %} method="post">
                 <input class="span2" type="text" placeholder="Name" name="username">
                 <input class="span2" type="password" placeholder="Password" name="password">
-                <button type="submit" class="btn">Log in</button>
+                <button type="submit" class="btn">Log In</button>
                 <button type="button" class="btn" onClick="parent.location={% url 'stickit.views.sign_up' %}">Sign Up</button>
               </form>
             {% endif %}
