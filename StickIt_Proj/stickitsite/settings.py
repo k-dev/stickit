@@ -138,6 +138,8 @@ INSTALLED_APPS = (
     'django_jenkins',
 )
 
+# TEST_RUNNER = 'django_selenium.selenium_runner.SeleniumTestRunner'
+
 JENKINS_TASKS = ('django_jenkins.tasks.run_pylint',
                  'django_jenkins.tasks.run_pep8',
                  'django_jenkins.tasks.run_pyflakes',
